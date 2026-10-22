@@ -6,13 +6,9 @@ description: >-
   SocialDataX public platforms including 小红书 / XHS, Douyin, Kuaishou, Bilibili,
   Zhihu, Instagram, X / Twitter, YouTube, TikTok, Weibo, Toutiao, and WeChat
   Channels, plus WeChat Official Account article link details and statistics.
-  For 百度贴吧 / Baidu Tieba research, choose media-search, media-detail,
-  media-comments, media-user-info, or media-user-posts. User discovery, search
-  suggestions, product research, 蒲公英 / Pugongying creator analytics and 公众号
-  article/account research use those same capability skills. For account points
-  use `account balance`; for API documentation use `docs search`, `docs
-  operation`, or `docs openapi`. Also supports Haokan / 好看视频 content research
-  and replies authored by X creators.
+  For account points use `account balance`; for API documentation use `docs
+  search`, `docs operation`, or `docs openapi`. Also supports Haokan / 好看视频
+  content research and replies authored by X creators.
 metadata:
   openclaw:
     requires:
@@ -33,7 +29,7 @@ metadata:
     path: skills/socialdatax-content-research-assistant
     license_path: LICENSE
     ref: main
-    commit: ae6f5973db028771b16d68adb327a12ec5c2f401
+    commit: 111ada97bdef9bb18bd0863799757e0b5998e364
   source_client: socialdatax-skills
   source_platform: github
   source_skill: socialdatax-content-research-assistant
@@ -42,7 +38,7 @@ metadata:
 
 # SocialDataX Cross-Platform Content Research
 
-Use this skill to combine SocialDataX content research commands for supported public platforms: Xiaohongshu / XHS / RedNote, Douyin, Kuaishou, Bilibili, Zhihu, Instagram, X / Twitter, YouTube, TikTok, Weibo, Toutiao, WeChat Channels, plus WeChat Official Account article link details and statistics. For 百度贴吧 / Baidu Tieba research, choose media-search, media-detail, media-comments, media-user-info, or media-user-posts. User discovery, search suggestions, product research, 蒲公英 / Pugongying creator analytics and 公众号 article/account research use those same capability skills. For account points use `account balance`; for API documentation use `docs search`, `docs operation`, or `docs openapi`. Also supports Haokan / 好看视频 content research and replies authored by X creators.
+Use this skill to combine SocialDataX content research commands for supported public platforms: Xiaohongshu / XHS / RedNote, Douyin, Kuaishou, Bilibili, Zhihu, Instagram, X / Twitter, YouTube, TikTok, Weibo, Toutiao, WeChat Channels, plus WeChat Official Account article link details and statistics. For account points use `account balance`; for API documentation use `docs search`, `docs operation`, or `docs openapi`. Also supports Haokan / 好看视频 content research and replies authored by X creators.
 
 Current platform support:
 
@@ -116,7 +112,6 @@ Current platform support:
 - Weibo / 微博 creator posts through the `weibo_get_user_posts_by_*` tools.
 - Toutiao / 今日头条 creator posts through the `toutiao_get_user_posts_by_*` tools, optionally filtered by `content_type` (`all`, `article`, `video`, or `micro_post`).
 - WeChat Channels / 视频号 creator videos and image posts through the `wechat_get_user_posted_videos_by_*` tools; the user_id entrypoint requires a `v2_...@finder` user_id.
-- For 百度贴吧 / Baidu Tieba research, choose media-search, media-detail, media-comments, media-user-info, or media-user-posts. User discovery, search suggestions, product research, 蒲公英 / Pugongying creator analytics and 公众号 article/account research use those same capability skills. For account points use `account balance`; for API documentation use `docs search`, `docs operation`, or `docs openapi`.
 - Haokan / 好看视频 video discovery, details, comments/replies, creator profiles and creator videos; X creator-authored replies via `x user-replies`.
 
 ## API Key
@@ -404,7 +399,7 @@ X creator replies: use `x user-replies` for replies authored by the creator, inc
 
 ## Safety Boundary
 
-This skill is read-only. It uses `SOCIALDATAX_API_KEY` from the user's environment at runtime. Generated Skill files do not contain API keys. It does not read local browser data or perform login, posting, liking, commenting, or account changes.
+SocialDataX requests in this skill are read-only and do not modify social accounts or platform content. It uses `SOCIALDATAX_API_KEY` from the user's environment at runtime; generated Skill files do not contain API keys. It does not read local browser data or perform login, posting, liking, commenting, or account changes. The optional `bilibili download` command writes video and audio tracks plus the merged video to the user-selected local output path, uses local `ffmpeg`, and removes temporary tracks unless `--keep-tracks` is set.
 
 ## MCP Tools
 
